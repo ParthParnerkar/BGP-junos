@@ -4,7 +4,7 @@ import sys
 
 
 print(get_network_driver('ios'))
-g
+
 
 def main(config_file):
     global device
