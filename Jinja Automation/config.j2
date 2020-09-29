@@ -1,0 +1,14 @@
+{%- for interface in interfaces %}
+interface {{ interface }}
+{%- for ip in addresses %}
+ ip address {{ ip }}  255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router {{ protocol }}
+ network {{ network1 }}
+ network {{ network2 }}
