@@ -1,0 +1,27 @@
+interfaces {
+    {% for interface in interfaces %}
+    {{ interface.name }} {
+        description "{{ interface.description }}";
+        {{ unit_no }} {
+            family {{ family_type }} {
+                address {{ interface.ip_address }}
+            }
+        }
+    }
+    {% endfor %}
+}
+
+protcols {
+    bgp {
+        group external-peers {
+            type external;
+            {% for neighbor in neighbors %}
+            neighbor {{ neighbor.ip }} {
+                peer-as {{ neighbor.as_number}};
+            }
+            {% endfor %}
+        }
+
+        }
+
+    }

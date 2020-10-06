@@ -1,0 +1,19 @@
+---
+devices:
+  as_no: 100
+  vMX1:
+    interfaces:
+      - name: ge-0/0/1
+        description: Connected to vMX2
+        ip_address: 192.168.10.1/24
+  vMX2:
+    as_no: 200
+    interfaces:
+      - name: ge-0/0/1
+        description: Connected to vMX1
+        ip_address: 192.168.10.2/24
+
+  bgp:
+    neighbors:
+      - ip: 129.12.42.14
+        as_number: 4
