@@ -1,0 +1,15 @@
+
+---
+global:
+  data:
+    domain: abc.inc
+    asn: 1
+
+eu:
+  data:
+    asn: 65001
+
+bma:
+  groups:
+    - eu
+    - global
